@@ -1,6 +1,6 @@
 # PromdasQuizMTK
 
-###Struct
+### Struct
 ```c
 typedef struct Time {
   int hours;
@@ -8,7 +8,7 @@ typedef struct Time {
   int seconds;
 } Time;
 ```
-###Fungsi
+### Fungsi
 ```c
 int login(char (*usernames)[100], char (*passwords)[100], int *len_user);
 int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user);
