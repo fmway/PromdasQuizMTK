@@ -1,1 +1,5 @@
 # PromdasQuizMTK
+
+```c
+printf("STDIO");
+```
