@@ -1,0 +1,3 @@
+@echo aku dan dia
+
+
