@@ -1,0 +1,9 @@
+/*
+!/.gitignore
+!/example
+!/include
+!/libs
+!/Makefile
+!/README.md
+!/src
+bin/*
