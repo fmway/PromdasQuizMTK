@@ -6,10 +6,10 @@
   - `int login(char (*usernames)[100], char (*passwords)[100], int *len_user);
 int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user);`
   - `Time gettimenow(void);`
-  - Time diftime(Time time_1, Time time_2);
-  - int toseconds(Time time);
-  - void clear();
-  - int logout(void);
+  - `Time diftime(Time time_1, Time time_2);`
+  - `int toseconds(Time time);`
+  - `void clear();`
+  - `int logout(void);`
   - `int start(char (*username_admins)[100], char (*name_admins)[100], char (*password_admins)[100], int *len_admins, char (*username_users)[100], char (*name_users)[100], char (*password_users)[100], int *len_users, char *(*questions)[10], char *(*choices)[10][4], char (*keys)[10], int (*scores)[], int (*time_plays)[], const int level);`
   - `int menu_user(char (*usernames)[100], char (*names)[100], int *len_user, char *(*questions)[10], char *(*choices)[10][4], char (*keys)[10], int (*scores)[], int (*time_plays)[], const int level, const int id_user);`
   - `int menu_admin(char (*usernames)[100], char (*names)[100], int *len_user, char *(*questions)[10], char *(*choices)[10][4], char (*keys)[10], int (*scores)[], int (*time_plays)[], const int level);`
