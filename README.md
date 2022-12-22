@@ -49,44 +49,139 @@
 ## Fungsi clear
 
   + Kode :
+
   + Contoh Implementasi :
 
 ## Fungsi gettimenow
 
+  + Kode :
+
+  + Contoh Implementasi :
+
 ## Fungsi toseconds
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi getpasswd
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi read\_line
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi run\_questions
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi level\_questions
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi print\_questions
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi print\_choices
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi print\_keys
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi print\_score
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi login
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi reg
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi logout
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi menu\_user
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi menu\_admin
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi update\_questions
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 ## Fungsi get\_questions
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi get\_data
 
+  + Kode :
+
+  + Contoh Implementasi :
+
+
 ## Fungsi start
+
+  + Kode :
+
+  + Contoh Implementasi :
+
 
 
