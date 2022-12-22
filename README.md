@@ -179,9 +179,5 @@
 
 ## Fungsi start
 
-  + Kode :
-
-  + Contoh Implementasi :
-
-
+  Kode :
 
