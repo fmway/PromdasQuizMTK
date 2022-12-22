@@ -1,6 +1,6 @@
 # PromdasQuizMTK
 
-# Flowchart
+## Flowchart
 ![flowchart](img/flowchart.jpg)
 
 ## Komponen
