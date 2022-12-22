@@ -401,7 +401,7 @@
     }
     ```
 
-### Contoh implementasi
+## Contoh implementasi
 
 ```c
 int main() {
