@@ -49,135 +49,252 @@
 ## Fungsi clear
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 ## Fungsi gettimenow
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 ## Fungsi toseconds
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi getpasswd
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi read\_line
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi run\_questions
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi level\_questions
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi print\_questions
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi print\_choices
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi print\_keys
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi print\_score
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi login
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi reg
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi logout
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi menu\_user
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi menu\_admin
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi update\_questions
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi get\_questions
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi get\_data
 
   + Kode :
+    ```c
+
+    ```
 
   + Contoh Implementasi :
+    ```c
+
+    ```
 
 
 ## Fungsi start
 
   Kode :
+    ```c
+
+    ```
 
