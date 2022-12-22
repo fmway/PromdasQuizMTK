@@ -354,7 +354,7 @@
 
 ## Fungsi login
 
-  + Kode :
+  Kode :
     ```c
     int login(char (*usernames)[100], char (*passwords)[100], int *len_user) {
       char username[100], password[100];
@@ -380,78 +380,27 @@
 ## Fungsi reg
 
   Kode :
-  ```c
-  int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user) {
-    char username[100], name[100];
-    printf("Nama : "); scanf(" %[^\n]s", name); strcpy(names[*len_user], name);
-    while(true) {
-      bool pass = false;
-      printf("Username : "); scanf(" %[^\n]s", username);
-      for(int i = 0; i < *len_user; i++)
-        if(!strcmp(usernames[i], username)) pass = true;
-      if(pass) {
+    ```c
+    int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user) {
+      char username[100], name[100];
+      printf("Nama : "); scanf(" %[^\n]s", name); strcpy(names[*len_user], name);
+      while(true) {
+        bool pass = false;
+        printf("Username : "); scanf(" %[^\n]s", username);
+        for(int i = 0; i < *len_user; i++) {
+          if(!strcmp(usernames[i], username)) pass = true;
+        }
+        if(pass) {
           printf("Username sudah digunakan! Coba yang lain!!\n");
-      } else {
-        strcpy(usernames[*len_user], username);
-        break;
-      }
-    }
-    getpasswd("Password : ", passwords[*len_user]);
-    return (*len_user)++;
-    }
-    ```
-
-## Contoh implementasi
-
-```c
-int main() {
-  char names[100][100] = {"Users"};
-  char usernames[100][100] = {"users"};
-  char passwords[100][100] = {"users"};
-  int len_users = 1;
-
-  char pilih;
-  int id;
-  while(
-    printf("1. Login\n"),
-    printf("2. Register\n"),
-    printf("k. keluar\n"),
-    printf("=> "),
-    scanf(" %c", &pilih),
-    pilih != 'k' 
-  ) {
-      if(pilih == '1') {
-        while(1) {
-          id = login(usernames,passwords,&len_users);
-          if(id < 0) {
-            printf("User tidak ditemukan!!\n");
-          } else {
-            break;
-          }
+        } else {
+          strcpy(usernames[*len_user], username);
+          break;
         }
       }
-      else if(pilih == '2') {
-        id = reg(usernames, names, passwords, &len_users);
-      }
-      else {
-        printf("Anda salah memasukkan pilihan!\n");
-        continue;
-      }
-      printf("id : %d\n", id);
-      for(int i = 0; i < len_users; i++) {
-        printf("---------------------------------------\n");
-        printf("Nama     : %s\n", names[i]);
-        printf("Username : %s\n", usernames[i]);
-        printf("Password : %s\n", passwords[i]);
-        printf("---------------------------------------\n");
-      }
+      getpasswd("Password : ", passwords[*len_user]);
+      return (*len_user)++;
     }
-
-  return 0;
-}
-```
-
-
+    ```
 ## Fungsi logout
 
   + Kode :
