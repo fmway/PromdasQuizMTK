@@ -80,7 +80,7 @@ void print_score(char *name, char *username, int *score, int *time_plays, const 
 }
 
 int update_question(char *(*questions)[10], char *(*choices)[10][4], char (*keys)[10], int (*scores)[], int (*time_plays)[], const int level) {
-  int types, input, num, result;
+  int types, input, num;
   char tmp[100];
   clear();
   printf("---------------------------------------------------------\n");
@@ -145,7 +145,7 @@ back:
       clear();
       char yn;
       while(
-        printf("%s\n", questions[input-1][num]),
+        printf("%s\n", questions[input-1][num - 1]),
         printf("Edit? (y/n)\n=> "), scanf(" %c", &yn),
         tolower(yn) != 'y' && tolower(yn) != 'n'
       ) printf("Pilihan anda salah\n");
@@ -156,15 +156,15 @@ back:
         break;
       }
 
-      printf("%s\n", questions[input-1][num]);
+      printf("%s\n", questions[input-1][num - 1]);
       printf("--------------------------------------------------------------\n");
       printf("Tekan Escape lalu enter untuk save dan keluar!\n");
       printf("--------------------------------------------------------------\n");
-      questions[input-1][num] = (char *)(malloc(500 * sizeof(char)));
-      read_line(questions[input-1][num]);
-      questions[input-1][num][0] = ' ';
+      questions[input-1][num - 1] = (char *)(malloc(500 * sizeof(char)));
+      read_line(questions[input-1][num - 1]);
+      questions[input-1][num - 1][0] = ' ';
       clear();
-      printf("%s\n", questions[input-1][num]);
+      printf("%s\n", questions[input-1][num - 1]);
       while(
         printf("Apakah sudah benar ? (y/n)\n=> "), scanf(" %[^\n]s", input3),
         strcmp(input3, "y") && strcmp(input3, "Y") && strcmp(input3, "n") && strcmp(input3, "N")
@@ -173,7 +173,7 @@ back:
     }
     while(true) {
       clear();
-      print_choices(choices[input-1][num], 4);
+      print_choices(choices[input-1][num - 1], 4);
       while(
         printf("Edit? (y/n) => "), scanf(" %[^\n]s", input3),
         strcmp(input3, "Y") && strcmp(input3, "y") && strcmp(input3, "n") && strcmp(input3, "N")
@@ -185,9 +185,9 @@ back:
           printf("Pilih yang ingin di edit [a-d]\n=> "), scanf(" %c", &input4),
           input4 < 'a' || input4 > 'd'
         ) printf("Anda salah memasukkan pilihan!\n");
-        printf("[%s] => ", choices[input-1][num][input4-97]);
-        choices[input-1][num][input4-97] = (char *)(malloc(100 * sizeof(char)));
-        scanf(" %[^\n]s", choices[input-1][num][input4-97]);
+        printf("[%s] => ", choices[input - 1][num - 1][input4-97]);
+        choices[input-1][num - 1][input4 - 97] = (char *)(malloc(100 * sizeof(char)));
+        scanf(" %[^\n]s", choices[input - 1][num - 1][input4-97]);
       } else {
         goto back;
       }
