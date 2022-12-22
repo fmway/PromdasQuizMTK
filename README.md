@@ -27,3 +27,22 @@
   - [get\_quetions](#get_questions)
   - [get\_data](#get_data)
 
+## Struct Time
+  + Kode :
+    ```c
+    typedef struct Time {
+      int hours;
+      int minutes;
+      int seconds;
+    } Time;
+    ```
+  + Contoh Implementasi :
+    ```c
+    Time sekarang;
+    sekarang.hours = 13;
+    sekarang.minutes = 15;
+    sekarang.seconds = 50;
+
+    printf("Sekarang jam %d:%d:%d\n", sekarang.hours, sekarang.minutes, sekarang.seconds);
+    ```
+
