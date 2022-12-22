@@ -354,7 +354,7 @@
 
 ## Fungsi login
 
-  Kode :
+  + Kode :
     ```c
     int login(char (*usernames)[100], char (*passwords)[100], int *len_user) {
       char username[100], password[100];
@@ -379,7 +379,7 @@
 
 ## Fungsi reg
 
-  Kode :
+  + Kode :
     ```c
     int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user) {
       char username[100], name[100];
