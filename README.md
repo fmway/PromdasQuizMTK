@@ -82,7 +82,8 @@
 
   + Contoh Implementasi :
     ```c
-    
+    Time sekarang = gettimenow();
+    printf("Sekarang jam %d:%d:%d\n", sekarang.hours, sekarang.minutes, sekarang.seconds);
     ```
 ## Fungsi diftime
 
@@ -101,7 +102,13 @@
 
   + Contoh Implementasi :
     ```c
-
+    Time time1 = gettimenow();
+    printf("Sekarang adalah jam %d:%d:%d\n", time1.hours, time1.minutes, time1.seconds);
+    sleep(3);
+    Time time2 = gettimenow();
+    printf("Lalu sekarang jam %d:%d:%d\n", time2.hours, time2.minutes, time2.seconds);
+    Time perbedaan = diftime(time1, time2);
+    printf("Perbedaannya adalah %d jam %d menit %d detik\n", perbedaan.hours, perbedaan.minutes, perbedaan.seconds);
     ```
 
 
@@ -114,6 +121,11 @@
     }
     ```
   + Contoh Implementasi :
+    ```c
+    Time sekarang = gettimenow();
+    printf("Sekarang adalah jam %d:%d:%d\n", sekarang.hours, sekarang.minutes, sekarang.seconds);
+    printf("Atau dalam detik adalah %d detik\n", toseconds(sekarang));
+    ```
 
 
 ## Fungsi getpasswd
@@ -151,7 +163,9 @@
 
   + Contoh Implementasi :
     ```c
-
+    char password[100];
+    getpasswd("Masukkan Password: ", password);
+    printf("%s\n", password);
     ```
 
 
@@ -173,7 +187,11 @@
 
   + Contoh Implementasi :
     ```c
-
+    char input[1000];
+    printf("Tekan Escape lalu enter untuk keluar dari sini!\n");
+    read_line(input);
+    system("clear");
+    printf("%s\n", input);
     ```
 
 
@@ -205,7 +223,12 @@
 
   + Contoh Implementasi :
     ```c
-
+    int score = 0;
+    char *questions[10] = {"Berapa 5 + 5?....", "enam dikali enam sama dengan...."};
+    char *choices[10][4] = {{"50", "10", "20", "40"}, {"1", "30", "36", "40"}};
+    char keys[10] = {'b', 'c'};
+    run_questions(questions, choices, keys, &score, 2);
+    printf("score anda : %d\n", score);
     ```
 
 
@@ -231,7 +254,26 @@
 
   + Contoh Implementasi :
     ```c
+    int scores[] = {0, 0};
+    int times[] = {0, 0};
+    char *questions[2][10] = {
+      {"Berapa 5 + 5?....", "enam dikali enam sama dengan...."},
+      {"6 * 5 = ...", "10 * 10 = ...."},
+    };
 
+    char *choices[2][10][4] = {
+      {{"50", "10", "20", "40"}, {"1", "30", "36", "40"}},
+      {{"15", "30", "25", "40"}, {"10", "1", "1000", "100"}},
+    };
+    char keys[2][10] = {
+      {'b', 'c'},
+      {'b', 'd'},
+    };
+    level_questions(questions, choices, keys, scores, times, 2);
+    for(int i = 0; i < 2; i++) {
+      printf("score %d : %d\n", i + 1, scores[i]);
+      printf("time    : %d detik\n", times[i]);
+    }
     ```
 
 
@@ -333,42 +375,80 @@
       }
       return pass;
     }
-    ```
-
-  + Contoh Implementasi :
-    ```c
-
-    ```
-
 
 ## Fungsi reg
 
-  + Kode :
-    ```c
-    int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user) {
-      char username[100], name[100];
-      printf("Nama : "); scanf(" %[^\n]s", name); strcpy(names[*len_user], name);
-      while(true) {
-        bool pass = false;
-        printf("Username : "); scanf(" %[^\n]s", username);
-        for(int i = 0; i < *len_user; i++)
-          if(!strcmp(usernames[i], username)) pass = true;
-        if(pass) {
+  Kode :
+  ```c
+  int reg(char (*usernames)[100], char (*names)[100], char (*passwords)[100], int *len_user) {
+    char username[100], name[100];
+    printf("Nama : "); scanf(" %[^\n]s", name); strcpy(names[*len_user], name);
+    while(true) {
+      bool pass = false;
+      printf("Username : "); scanf(" %[^\n]s", username);
+      for(int i = 0; i < *len_user; i++)
+        if(!strcmp(usernames[i], username)) pass = true;
+      if(pass) {
           printf("Username sudah digunakan! Coba yang lain!!\n");
-        } else {
-          strcpy(usernames[*len_user], username);
-          break;
-        }
+      } else {
+        strcpy(usernames[*len_user], username);
+        break;
       }
-      getpasswd("Password : ", passwords[*len_user]);
-      return (*len_user)++;
+    }
+    getpasswd("Password : ", passwords[*len_user]);
+    return (*len_user)++;
     }
     ```
 
-  + Contoh Implementasi :
-    ```c
+### Contoh implementasi
 
-    ```
+```c
+int main() {
+  char names[100][100] = {"Users"};
+  char usernames[100][100] = {"users"};
+  char passwords[100][100] = {"users"};
+  int len_users = 1;
+
+  char pilih;
+  int id;
+  while(
+    printf("1. Login\n"),
+    printf("2. Register\n"),
+    printf("k. keluar\n"),
+    printf("=> "),
+    scanf(" %c", &pilih),
+    pilih != 'k' 
+  ) {
+      if(pilih == '1') {
+        while(1) {
+          id = login(usernames,passwords,&len_users);
+          if(id < 0) {
+            printf("User tidak ditemukan!!\n");
+          } else {
+            break;
+          }
+        }
+      }
+      else if(pilih == '2') {
+        id = reg(usernames, names, passwords, &len_users);
+      }
+      else {
+        printf("Anda salah memasukkan pilihan!\n");
+        continue;
+      }
+      printf("id : %d\n", id);
+      for(int i = 0; i < len_users; i++) {
+        printf("---------------------------------------\n");
+        printf("Nama     : %s\n", names[i]);
+        printf("Username : %s\n", usernames[i]);
+        printf("Password : %s\n", passwords[i]);
+        printf("---------------------------------------\n");
+      }
+    }
+
+  return 0;
+}
+```
 
 
 ## Fungsi logout
