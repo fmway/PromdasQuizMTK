@@ -1,5 +1,8 @@
 # PromdasQuizMTK
 
+# Flowchart
+![flowchart](img/flowchart.jpg)
+
 ## Komponen
 * [Struct Time](#struct-time)
 * Fungsi :
