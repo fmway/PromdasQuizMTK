@@ -405,7 +405,36 @@
 
   + Kode :
     ```c
+    int menu_user(char (*usernames)[100], char (*names)[100], int *len_user, char *(*questions)[10], char *(*choices)[10][4], char (*keys)[10], int (*scores)[3], int (*time_plays)[3], const int level, const int id_user) {
+      clear();
+      int result;
+      char input[100];
+      printf("-----------------------DASHBOARD------------------------\n");
+      printf("m. Mulai\n");
+      printf("k. Kembali\n");
+      printf("l. Logout\n");
+      printf("--------------------------------------------------------\n");
+      while(
+        printf("=> "), scanf(" %[^\n]s", input),
+        strcmp(input, "m") && strcmp(input, "k") && strcmp(input, "l")
+      ) printf("Pilihan anda tidak tepat!!\n");
 
+      if(!strcmp(input, "k")) {
+        return BACK;
+      } else if(!strcmp(input, "l")) {
+        return LOGOUT;
+      } else {
+        level_questions(questions, choices, keys, scores[id_user], time_plays[id_user], level);
+        print_score(names[id_user], usernames[id_user], scores[id_user], time_plays[id_user], level);
+        result = logout();
+      }
+  
+      if(result == BACK) {
+        return menu_user(usernames, names, len_user, questions, choices, keys, scores, time_plays, level, id_user);
+      } else {
+        return result;
+      }
+    }
     ```
 
   + Contoh Implementasi :
@@ -619,19 +648,6 @@
 
   + Kode :
     ```c
-
-    ```
-
-  + Contoh Implementasi :
-    ```c
-
-    ```
-
-
-## Fungsi get\_data
-
-  + Kode :
-    ```c
     int get_question(char *(*questions)[10], char *(*choices)[10][4], char (*keys)[10], const int level) {
       int input, types, result;
       char tmp[100];
@@ -705,6 +721,24 @@
     ```c
 
     ```
+## Fungsi get\_data
+
+  + Kode :
+    ```c
+    int get_data(char (*usernames)[100], char (*names)[100], int *len_user, int (*scores)[3], int (*time_plays)[3], const int level) {
+      clear();
+      for(int i = 0; i < *len_user; i++) 
+        print_score(names[i], usernames[i], scores[i], time_plays[i], level);
+      return logout();
+    }
+    ```
+
+  + Contoh Implementasi :
+    ```c
+
+    ```
+
+
 
 
 ## Fungsi start
